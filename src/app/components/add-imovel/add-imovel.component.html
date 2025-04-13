@@ -1,0 +1,34 @@
+<div class="card">
+  
+  <h2>Adicione seu imóvel!</h2>
+  <form (ngSubmit)="cadastrarImovel()">
+
+    <label>Imagens:</label>
+    <input type="file" (change)="onFileChange($event)" multiple><br><br>
+
+    <div *ngIf="previewImages.length > 0">
+      <h3>Pré-visualização:</h3>
+      <div *ngFor="let imagem of previewImages">
+        <img [src]="imagem" style="max-width: 200px; max-height: 200px;">
+      </div>
+    </div>
+
+    <label>Título:</label>
+    <input type="text" [(ngModel)]="imovel.titulo" name="titulo"><br><br>
+
+    <label>Cidade:</label>
+    <input type="text" [(ngModel)]="imovel.cidade" name="cidade"><br><br>
+
+    <label>Estado:</label>
+    <input type="text" [(ngModel)]="imovel.estado" name="estado"><br><br>
+
+    <label>Valor ($):</label>
+    <input type="number" [(ngModel)]="imovel.valor" name="valor"><br><br>
+
+  
+
+    <button type="submit">Cadastrar</button>
+  </form>
+
+
+</div>
