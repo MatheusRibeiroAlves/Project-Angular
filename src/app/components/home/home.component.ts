@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // Importe FormsModule para o ngModel
+import { FormsModule } from '@angular/forms'; 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, FormsModule], // Adicione FormsModule aos imports
+  imports: [CommonModule, HttpClientModule, FormsModule], 
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
     this.http.get<any[]>('/api/imoveis/').subscribe(
       data => {
         this.imoveis = data;
-        this.filteredImoveis = [...this.imoveis]; // Inicializa os imóveis filtrados com todos os imóveis
+        this.filteredImoveis = [...this.imoveis]; 
       },
       error => {
         console.error('Erro ao carregar imóveis:', error);

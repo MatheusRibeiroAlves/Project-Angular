@@ -12,15 +12,14 @@
     padding: 15px;
     margin-bottom: 10px;
     box-sizing: border-box;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Adicionando transição */
+    transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
 .imovel-card:hover {
-    background-color: #800080; /* Cor roxa */
+    background-color: #800080; 
     color: white;
     cursor: pointer;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
-    /* transform: translateY(-2px); */
+    
 }
 
 .imovel-card:hover h3,
@@ -48,7 +47,7 @@
 }
 
 .imovel-card:hover img {
-    border-color: #eee; /* Manter a cor da borda da imagem */
+    border-color: #eee; 
 }
 
 @media (max-width: 992px) {
