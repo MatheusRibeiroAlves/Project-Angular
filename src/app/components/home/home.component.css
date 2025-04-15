@@ -1,0 +1,64 @@
+.imoveis-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.imovel-card {
+    width: calc(25% - 20px);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Adicionando transição */
+}
+
+.imovel-card:hover {
+    background-color: #800080; /* Cor roxa */
+    color: white;
+    cursor: pointer;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+    /* transform: translateY(-2px); */
+}
+
+.imovel-card:hover h3,
+.imovel-card:hover p {
+    color: white;
+}
+
+.imovel-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.imovel-card p {
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.imovel-card img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.imovel-card:hover img {
+    border-color: #eee; /* Manter a cor da borda da imagem */
+}
+
+@media (max-width: 992px) {
+    .imovel-card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .imovel-card {
+        width: 100%;
+    }
+}

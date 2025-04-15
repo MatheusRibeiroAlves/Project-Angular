@@ -1,9 +1,8 @@
-// add-imovel.component.ts
-
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router'; // Importe o Router
 
 @Component({
   selector: 'app-add-imovel',
@@ -18,23 +17,23 @@ export class AddImovelComponent {
     cidade: '',
     estado: '',
     valor: 0,
-    imagens: [] as string []
+    imagens: [] as string[]
   };
 
-  previewImages: string[] = []; 
+  previewImages: string[] = [];
 
   cadastroSucesso: boolean = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {} // Injete o Router
 
   cadastrarImovel() {
     this.http.post('/api/imoveis/', this.imovel).subscribe(
       response => {
         console.log('Imóvel cadastrado com sucesso:', response);
         this.imovel = { titulo: '', cidade: '', estado: '', valor: 0, imagens: [] };
-        this.previewImages = []; 
+        this.previewImages = [];
         this.cadastroSucesso = true;
-
+        this.router.navigate(['/']); // Redireciona para a home
       },
       error => {
         console.error('Erro ao cadastrar imóvel:', error);
@@ -47,7 +46,7 @@ export class AddImovelComponent {
     const files = event.target.files;
     if (files && files.length > 0) {
       this.imovel.imagens = [];
-      this.previewImages = []; 
+      this.previewImages = [];
       for (const file of files) {
         const reader = new FileReader();
         reader.onload = (e: any) => {

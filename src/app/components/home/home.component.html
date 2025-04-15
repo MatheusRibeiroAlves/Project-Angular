@@ -1,0 +1,27 @@
+<main>
+  <header class="brand-name">
+      <img class="brand-logo" src="assets/logo.svg" alt = "logo" aria-hidden="true" />
+  </header>
+  <section class="content">
+  </section>
+</main>
+
+<div class="search-bar">
+  <label for="searchInput">Pesquisar Imóvel:</label>
+  <input type="text" id="searchInput" [(ngModel)]="searchTerm" (input)="filterImoveis()">
+</div>
+
+<div class="imoveis-container">
+  <div *ngFor="let imovel of filteredImoveis" class="imovel-card">
+      <h3>{{ imovel.titulo }}</h3>
+      <p>Cidade: {{ imovel.cidade }}</p>
+      <p>Estado: {{ imovel.estado }}</p>
+      <p>Valor: {{ imovel.valor }}</p>
+      <div *ngFor="let imagem of imovel.imagens">
+          <img [src]="imagem" style="max-width: 100px; max-height: 100px;">
+      </div>
+  </div>
+  <div *ngIf="filteredImoveis.length === 0 && searchTerm">
+      <p>Nenhum imóvel encontrado para "{{ searchTerm }}".</p>
+  </div>
+</div>
