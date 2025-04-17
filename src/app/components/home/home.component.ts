@@ -1,36 +1,41 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
+import { ImovelService } from '../../services/imovel.service';
+import { ImovelResponse } from '../../models/imovel.model';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, FormsModule], 
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  imoveis: any[] = [];
-  filteredImoveis: any[] = [];
+  imoveis: ImovelResponse[] = [];
+  filteredImoveis: ImovelResponse[] = [];
   searchTerm: string = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private imovelService: ImovelService) {}
 
   ngOnInit() {
     this.carregarImoveis();
   }
 
   carregarImoveis() {
-    this.http.get<any[]>('/api/imoveis/').subscribe(
-      data => {
+    this.imovelService.getImoveis().subscribe({
+      next: (data: ImovelResponse[]) => {
         this.imoveis = data;
-        this.filteredImoveis = [...this.imoveis]; 
+        this.filteredImoveis = [...this.imoveis];
+        this.filteredImoveis.forEach(imovel => { 
+          console.log('ID do imóvel:', imovel.id);
+        });
       },
-      error => {
+      error: (error: any) => {
         console.error('Erro ao carregar imóveis:', error);
       }
-    );
+    });
   }
 
   filterImoveis() {

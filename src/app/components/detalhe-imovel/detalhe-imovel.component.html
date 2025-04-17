@@ -1,0 +1,28 @@
+<div *ngIf="imovel">
+    <h2>{{ imovel.titulo }}</h2>
+    <p>Cidade: {{ imovel.cidade }}</p>
+    <p>Estado: {{ imovel.estado }}</p>
+    <p>Valor: {{ imovel.valor }}</p>
+    <h3>Imagens:</h3>
+    <div *ngFor="let imagem of imovel.imagens">
+      <img [src]="imagem" style="max-width: 300px; max-height: 300px; margin-right: 10px;">
+    </div>
+    <button [routerLink]="['/editar-imovel', imovel.id]">Editar Imóvel</button>
+    <button (click)="deletarImovel()">Deletar Imóvel</button>
+  </div>
+
+  <div *ngIf="errorMessage">
+    <p class="error-message">{{ errorMessage }}</p>
+  </div>
+
+  <div *ngIf="successMessage">
+    <p class="success-message">{{ successMessage }}</p>
+  </div>
+
+  <div *ngIf="!imovel && !errorMessage && imovelId">
+    <p>Carregando detalhes do imóvel...</p>
+  </div>
+
+  <div *ngIf="!imovel && !errorMessage && !imovelId">
+    <p>ID do imóvel inválido.</p>
+  </div>

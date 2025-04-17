@@ -12,16 +12,16 @@
 </div>
 
 <div class="imoveis-container">
-  <div *ngFor="let imovel of filteredImoveis" class="imovel-card">
-      <h3>{{ imovel.titulo }}</h3>
-      <p>Cidade: {{ imovel.cidade }}</p>
-      <p>Estado: {{ imovel.estado }}</p>
-      <p>Valor: {{ imovel.valor }}</p>
-      <div *ngFor="let imagem of imovel.imagens">
-          <img [src]="imagem" style="max-width: 100px; max-height: 100px;">
-      </div>
-  </div>
+  <a *ngFor="let imovel of filteredImoveis" class="imovel-card" [routerLink]="['/imovel', imovel.id]">
+    <h3>{{ imovel.titulo }}</h3>
+    <p>Cidade: {{ imovel.cidade }}</p>
+    <p>Estado: {{ imovel.estado }}</p>
+    <p>Valor: {{ imovel.valor }}</p>
+    <div *ngFor="let imagem of imovel.imagens">
+      <img [src]="imagem" style="max-width: 100px; max-height: 100px;">
+    </div>
+  </a>
   <div *ngIf="filteredImoveis.length === 0 && searchTerm">
-      <p>Nenhum imóvel encontrado para "{{ searchTerm }}".</p>
+    <p>Nenhum imóvel encontrado para "{{ searchTerm }}".</p>
   </div>
 </div>

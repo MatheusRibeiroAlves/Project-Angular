@@ -1,0 +1,60 @@
+<h2>Editar Imóvel</h2>
+
+<div *ngIf="errorMessage">
+  <p class="error-message">{{ errorMessage }}</p>
+</div>
+
+<div *ngIf="successMessage">
+  <p class="success-message">{{ successMessage }}</p>
+</div>
+
+<div *ngIf="isLoading">
+  <p>Carregando dados do imóvel para edição...</p>
+</div>
+
+<form *ngIf="!isLoading && imovel" (ngSubmit)="salvarEdicao()">
+  <div>
+    <label for="titulo">Título:</label>
+    <input type="text" id="titulo" name="titulo" [(ngModel)]="imovel.titulo" required>
+  </div>
+
+  <div>
+    <label for="cidade">Cidade:</label>
+    <input type="text" id="cidade" name="cidade" [(ngModel)]="imovel.cidade" required>
+  </div>
+
+  <div>
+    <label for="estado">Estado:</label>
+    <input type="text" id="estado" name="estado" [(ngModel)]="imovel.estado" required>
+  </div>
+
+  <div>
+    <label for="valor">Valor:</label>
+    <input type="number" id="valor" name="valor" [(ngModel)]="imovel.valor" required>
+  </div>
+
+  <h3>Imagens Atuais:</h3>
+  <div *ngIf="imovel.imagens && imovel.imagens.length > 0; else nenhumaImagem">
+    <div *ngFor="let imagem of imovel.imagens; let i = index" style="display: inline-block; margin-right: 10px; margin-bottom: 10px; border: 1px solid #ccc; padding: 5px;">
+      <img [src]="imagem" style="max-width: 100px; max-height: 100px; display: block;">
+      <button type="button" (click)="removerImagem(i)" class="btn btn-danger btn-sm mt-1">Remover</button>
+    </div>
+  </div>
+  <ng-template #nenhumaImagem>
+    <p>Nenhuma imagem cadastrada.</p>
+  </ng-template>
+
+  <div>
+    <label for="novasImagens">Adicionar Mais Imagens:</label>
+    <input type="file" id="novasImagens" multiple (change)="adicionarNovasImagens($event)">
+    <div *ngIf="novasImagensPreview && novasImagensPreview.length > 0">
+      <h4>Prévia das Novas Imagens:</h4>
+      <div *ngFor="let preview of novasImagensPreview" style="display: inline-block; margin-right: 10px; margin-bottom: 10px; border: 1px solid #ccc; padding: 5px;">
+        <img [src]="preview" style="max-width: 100px; max-height: 100px; display: block;">
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+  <button [routerLink]="['/imovel', imovelId]" class="btn btn-secondary">Cancelar</button>
+</form>
