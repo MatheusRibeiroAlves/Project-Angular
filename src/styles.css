@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+
+:root {
+    --breakpoint-small: 576px;   
+    --breakpoint-medium: 768px;  
+    --breakpoint-large: 992px;   
+    --breakpoint-xlarge: 1200px; 
+  }
+  
+  @media (max-width: var(--breakpoint-small)) {
+  }
+  
+  @media (min-width: var(--breakpoint-medium)) and (max-width: var(--breakpoint-large)) {
+  }
+  

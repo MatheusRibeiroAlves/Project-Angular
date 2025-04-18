@@ -1,49 +1,91 @@
+body {
+  background-color: #f4f6fa;
+  color: #2b2b2b;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 .card {
-    width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ddd; 
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    background-color: #f9f9f9; 
+  background-color: #e3eaf2;
+  padding: 80px;
+  margin: 40px auto 100px; /* Aumentei a margem inferior para 100px */
+  max-width: 650px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card h2 {
+  color: #3f72af;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #3f72af;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: 1px solid #c3cfe3;
+  border-radius: 6px;
+  font-size: 1em;
+  background-color: #ffffff;
+  color: #2b2b2b;
+  transition: all 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #3f72af;
+  box-shadow: 0 0 4px rgba(63, 114, 175, 0.2);
+  outline: none;
+}
+
+button[type="submit"] {
+  background-color: #3f72af;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #345f91;
+}
+
+.success-message {
+  background-color: #edf7f1;
+  color: #3c814f;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #cfe9db;
+  margin-top: 20px;
+}
+
+.preview-container img {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 5px;
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 40px;
+    margin: 20px auto 120px; /* Aumentei a margem inferior para telas menores também */
   }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  label, input, select {
-    margin-bottom: 10px;
-    display: block; 
-  }
-  
-  input, select {
-    width: 100%; 
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; 
-  }
-  
-  input:focus, select:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  }
-  
-  button {
-    background-color: #007bff;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%; 
-  }
-  
-  img {
-    max-width: 200px;
-    max-height: 200px;
-  } 
+}

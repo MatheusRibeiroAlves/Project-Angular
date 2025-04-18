@@ -48,9 +48,21 @@ export class AddImovelComponent {
       error: (error: any) => {
         console.error('Erro ao cadastrar imóvel:', error);
         this.cadastroSucesso = false;
-        this.cadastroErroMensagem = 'Erro ao cadastrar o imóvel. Por favor, tente novamente.'; // Exemplo de mensagem de erro
+        this.cadastroErroMensagem = 'Erro ao cadastrar o imóvel. Por favor, tente novamente.'; 
       }
     });
+  }
+
+  onValorChange(event: any) {
+    
+    let valor = event.target.value.replace(/\D/g, ''); 
+    
+   
+    if (valor) {
+      this.imovel.valor = parseFloat(valor) / 100; 
+    } else {
+      this.imovel.valor = 0; 
+    }
   }
 
   onFileChange(event: any) {
