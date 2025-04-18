@@ -1,6 +1,30 @@
+/* Estilos para o Footer Fixo */
 footer {
-    background-color: #800080; 
-    color: white; 
-    padding: 20px;
-    text-align: center;
+  background-color: #3f72af; /* Azul para o fundo */
+  color: #ffffff; /* Texto branco */
+  padding: 20px 16px;
+  text-align: center;
+  font-size: 0.95em;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  border-top: 1px solid #e0e0e0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.03);
+}
+
+footer p {
+  margin: 0;
+  line-height: 1.5;
+  color: #ffffff; /* Texto em branco */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+  footer {
+    padding: 16px 12px;
+    font-size: 0.85em;
   }
+}

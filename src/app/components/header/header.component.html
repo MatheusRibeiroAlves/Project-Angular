@@ -1,1 +1,16 @@
-<p>header works!</p>
+<header class="app-header">
+  <div class="logo">
+    <img src="/assets/logo.svg" alt="Logo do Site">
+  </div>
+  
+  <nav [class.open]="isMenuOpen">
+    <ul>
+      <li>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-button">Home</a>
+      </li>
+      <li>
+        <a routerLink="/add-imovel" routerLinkActive="active" class="nav-button">Adicionar Imóvel</a>
+      </li>
+    </ul>
+  </nav>
+</header>

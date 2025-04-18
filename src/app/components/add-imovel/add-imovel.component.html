@@ -22,15 +22,20 @@
     <label>Estado:</label>
     <input type="text" [(ngModel)]="imovel.estado" name="estado"><br><br>
 
-    <label>Valor ($):</label>
-    <input type="number" [(ngModel)]="imovel.valor" name="valor"><br><br>
+    <label>Valor (R$):</label>
+    <input 
+      type="text" 
+      [ngModel]="imovel.valor | currency:'BRL':true" 
+      (input)="onValorChange($event)" 
+      name="valor" 
+      placeholder="R$ 0,00"><br><br>
 
   
 
     <button type="submit">Cadastrar</button>
   </form>
 
-  <div *ngIf="cadastroSucesso" style="color: rgb(0, 9, 128); margin-top: 20px;">
+  <div *ngIf="cadastroSucesso" class="success-message">
     Imóvel cadastrado com sucesso!
   </div>
 

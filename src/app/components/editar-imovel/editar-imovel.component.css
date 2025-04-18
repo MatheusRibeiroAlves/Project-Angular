@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+  }
+  
+  h2 {
+    color: #2e3b4e;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .error-message {
+    color: #ff4e4e;
+    background-color: #ffd1d1;
+    border: 1px solid #ff4e4e;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  
+  .success-message {
+    color: #4eaf4e;
+    background-color: #d1ffd1;
+    border: 1px solid #4eaf4e;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  
+  .is-loading p {
+    font-size: 16px;
+    color: #888;
+    font-style: italic;
+  }
+  
+  form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  form div {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"], input[type="number"], input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border 0.3s;
+  }
+  
+  input[type="text"]:focus, input[type="number"]:focus, input[type="file"]:focus {
+    border-color: #4e92ff;
+    outline: none;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button.btn-primary {
+    background-color: #4e92ff;
+    color: white;
+  }
+  
+  button.btn-primary:hover {
+    background-color: #3578d3;
+  }
+  
+  button.btn-secondary {
+    background-color: #ccc;
+    color: white;
+  }
+  
+  button.btn-secondary:hover {
+    background-color: #999;
+  }
+  
+  img {
+    max-width: 100px;
+    max-height: 100px;
+    display: block;
+    border-radius: 4px;
+  }
+  
+  button.btn-danger {
+    background-color: #f44336;
+    color: white;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  button.btn-danger:hover {
+    background-color: #e53935;
+  }
+  
+  .novas-imagens-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .novas-imagens-preview img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 4px;
+  }
+  
