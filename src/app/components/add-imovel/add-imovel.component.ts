@@ -54,14 +54,14 @@ export class AddImovelComponent {
   }
 
   onValorChange(event: any) {
-    // Remove caracteres não numéricos
+    
     let valor = event.target.value.replace(/\D/g, ''); 
     
-    // Se algum valor foi digitado, converte para número
+   
     if (valor) {
-      this.imovel.valor = parseFloat(valor) / 100; // Dividido por 100 para tratar como centavos
+      this.imovel.valor = parseFloat(valor) / 100; 
     } else {
-      this.imovel.valor = 0; // Caso o campo seja apagado
+      this.imovel.valor = 0; 
     }
   }
 
