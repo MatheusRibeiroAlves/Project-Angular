@@ -9,7 +9,7 @@ body {
 .card {
   background-color: #e3eaf2;
   padding: 80px;
-  margin: 40px auto;
+  margin: 40px auto 100px; /* Aumentei a margem inferior para 100px */
   max-width: 650px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -81,4 +81,11 @@ button[type="submit"]:hover {
   max-width: 200px;
   max-height: 200px;
   object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 40px;
+    margin: 20px auto 120px; /* Aumentei a margem inferior para telas menores também */
+  }
 }

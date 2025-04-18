@@ -10,6 +10,8 @@
       <img [src]="imovel.imagens[0]" style="max-width: 100px; max-height: 100px;" alt="Imagem do imóvel">
     </div>
     <p>Valor: {{ imovel.valor | currency:'BRL':true }}</p>
+    <p>Mostrar detalhes do imóvel</p>
+
   </a>
   
   <div *ngIf="filteredImoveis.length === 0 && searchTerm">
