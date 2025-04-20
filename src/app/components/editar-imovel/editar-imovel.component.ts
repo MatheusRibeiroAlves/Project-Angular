@@ -80,8 +80,7 @@ export class EditarImovelComponent implements OnInit {
   }
 
   formatarValor() {
-    // Formatar o valor como R$ usando a notação de moeda
-    let valor = this.imovel.valor.toString().replace(/[^\d]/g, ''); // Remover qualquer coisa que não seja número
+    let valor = this.imovel.valor.toString().replace(/[^\d]/g, '');
     if (valor) {
       this.imovel.valor = parseFloat(valor) / 100;
     }
