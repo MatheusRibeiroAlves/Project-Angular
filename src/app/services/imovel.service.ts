@@ -9,7 +9,7 @@ import { ImovelCreate } from '../models/imovel.model';
   providedIn: 'root'
 })
 export class ImovelService {
-  private apiUrl = '/api/imoveis'; 
+  private apiUrl = 'http://127.0.0.1:8000/api/imoveis'; 
 
   constructor(private http: HttpClient) { }
 
